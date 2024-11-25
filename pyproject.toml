@@ -1,0 +1,10 @@
+[project]
+name = "Ogivator"
+version = "1.0"
+authors = [{name = "Clément Bouguyon", email = "clement.bouguyon@estaca.eu"},]
+decription = "Little program developed in Python to generate a 2d profile of a rocket nose cone for Solidworks XYZ curve (txt file)"
+readme = "README.md"
+dependencies = ["polars","tkinter","numpy"]
+
+[tool.coverage.run]
+omit = ["*/scripts/*"]
