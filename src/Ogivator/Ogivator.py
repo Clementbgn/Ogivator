@@ -493,7 +493,7 @@ def Choix_Haack_series(): #Function that generates the interface after clicking 
 
 home = Tk() # Definition of the home window
 home.title('Ogivator LightEdition') #Add title to the window
-home.geometry('1920x1080') #Define the size of the window
+home.geometry('1280x720') #Define the size of the window
 home.minsize(1280, 720) #Define the min size of the window
 home.iconbitmap(resource_path('ICONE.ico')) #Define the icon of the program
 home.config(background='#252526') #Define the color of the background
