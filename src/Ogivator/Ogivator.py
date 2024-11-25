@@ -487,3 +487,46 @@ def Choix_Haack_series(): #Function that generates the interface after clicking 
     Generate_button = Button(Frame_HS, text='Generate XYZ file', font=('Helvetica', 25), fg='#ffc600', bg='#01193b', command=lambda: Haack_series(precision_entry.get(), L_entry.get(), D_entry.get(), C_entry.get()))
     Generate_button.grid(row=9, column=0, sticky=N + S + E + W, pady=10)
     Frame_HS.pack(expand=YES)
+
+
+#MAIN PART OF THE CODE
+
+home = Tk() # Definition of the home window
+home.title('Ogivator LightEdition') #Add title to the window
+home.geometry('1920x1080') #Define the size of the window
+home.minsize(1280, 720) #Define the min size of the window
+home.iconbitmap(resource_path('ICONE.ico')) #Define the icon of the program
+home.config(background='#252526') #Define the color of the background
+cadre = Frame(home, bg='#252526') #Definition of a frame to contain all buttons 
+credit = Frame(home, bg='#252526') #Definition of a frame to contain credits
+logo_Eso = PhotoImage(file=resource_path('Logo_Eso.png')).subsample(9) #Addition of the picture of the ESO organization
+canvas = Canvas(cadre, width=250, height=250, bg='#252526', bd=0, highlightthickness=0)
+canvas.create_image(125.0, 125.0, image=logo_Eso)
+canvas.grid(row=0, column=0, sticky=W)
+developper = Label(credit, text='Developped by Clément Bouguyon 4th year Aersopace Engineering student at ESTACA in November 2023', font=('Helvetica', 10), bg='#252526', fg='white')
+developper.grid(row=0, column=0, sticky=N)
+cadre.pack(expand=YES)
+credit.pack(expand=YES)
+C = Button(cadre, text='Conic ogive', font=('Helvetica', 12), fg='#252526', bg='white', command=Choix_Conic)
+C.grid(row=2, column=0, sticky=N + S + E + W, pady=(50, 5))
+SBC = Button(cadre, text='Spherically blunted conic ogive', font=('Helvetica', 12), fg='#252526', bg='white', command=Choix_Spherically_blunted_conic)
+SBC.grid(row=3, column=0, sticky=N + S + E + W, pady=5)
+BC = Button(cadre, text='Bi-conic ogive', font=('Helvetica', 12), fg='#252526', bg='white', command=Choix_Bi_conic)
+BC.grid(row=4, column=0, sticky=N + S + E + W, pady=5)
+TO = Button(cadre, text='Tangent ogive', font=('Helvetica', 12), fg='#252526', bg='white', command=Choix_Tangent_ogive)
+TO.grid(row=5, column=0, sticky=N + S + E + W, pady=5)
+SBTO = Button(cadre, text='Spherically blunted tangent ogive', font=('Helvetica', 12), fg='#252526', bg='white', command=Choix_Spherically_blunted_tangent_ogive)
+SBTO.grid(row=6, column=0, sticky=N + S + E + W, pady=5)
+SO = Button(cadre, text='Secant ogive', font=('Helvetica', 12), fg='#252526', bg='white', command=Choix_Secant_ogive)
+SO.grid(row=7, column=0, sticky=N + S + E + W, pady=5)
+Ell = Button(cadre, text='Elliptical ogive', font=('Helvetica', 12), fg='#252526', bg='white', command=Choix_Elliptical)
+Ell.grid(row=8, column=0, sticky=N + S + E + W, pady=5)
+P = Button(cadre, text='Parabolic ogive', font=('Helvetica', 12), fg='#252526', bg='white', command=Choix_Parabolic)
+P.grid(row=9, column=0, sticky=N + S + E + W, pady=5)
+PS = Button(cadre, text='Power series ogive', font=('Helvetica', 12), fg='#252526', bg='white', command=Choix_Power_series)
+PS.grid(row=10, column=0, sticky=N + S + E + W, pady=5)
+HS = Button(cadre, text='Haack series ogive', font=('Helvetica', 12), fg='#252526', bg='white', command=Choix_Haack_series)
+HS.grid(row=11, column=0, sticky=N + S + E + W, pady=5)
+Wiki = Button(cadre, text='SHOW WIKIPEDIA PAGE FOR NOSE CONE INFORMATIONS', font=('Helvetica', 7), fg='#ffc600', bg='#01193b', command=openwiki)
+Wiki.grid(row=12, column=0, sticky=N + S + E + W, pady=5)
+home.mainloop()
