@@ -22,3 +22,6 @@ def generatefile(dataframe_xyz): #Function to generate a txt file with the XYZ c
     with open(path, 'a') as f:
         df_string = df.write_csv(include_header=False, separator=' ') #Write the dataframe as csv format to nosecone.txt
         f.write(df_string)
+
+def openwiki(): #Function to open the wikipedia page of the nose cone design
+    webbrowser.open('https://en.wikipedia.org/wiki/Nose_cone_design')
